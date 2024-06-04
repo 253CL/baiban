@@ -7,10 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-
     <application>
         <activity
-            android:name="com.chuanglan.shanyan_sdk.view.CmccLoginActivity"
+            android:name="com.chuanglan.shanyan_sdk.view.CmccLoginAuthActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="false"
             android:launchMode="singleTop"
@@ -22,17 +21,8 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="false"
             android:launchMode="singleTop"
-            android:targetActivity="com.chuanglan.shanyan_sdk.view.CmccLoginActivity"
+            android:targetActivity="com.chuanglan.shanyan_sdk.view.CmccLoginAuthActivity"
             android:taskAffinity=""
             android:theme="@android:style/Theme.Translucent" />
-        <receiver
-            android:name="com.sdk.mobile.manager.login.cucc.ConnectionChangeReceiver"
-            android:enabled="true"
-            android:exported="true"
-            tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="com.wosdk.mybroad" />
-            </intent-filter>
-        </receiver>
     </application>
 </manifest>

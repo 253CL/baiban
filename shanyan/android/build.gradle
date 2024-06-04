@@ -29,5 +29,5 @@ android {
     }
 }
 dependencies {
-    api files('libs/shanyan_sdk_v2.4.4.8_flutter.jar')
+    api files('libs/shanyan_sdk_v2.4.5.2_flutter.jar')
 }
