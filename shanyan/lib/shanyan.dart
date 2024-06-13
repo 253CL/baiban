@@ -11,7 +11,7 @@ class ClShanyan {
 
   // 获取iOS SDK版本
   static Future<String?> getShanyanVersion() async {
-    if (Platform.isIOS) {
+    if (Platform.isIOS || Platform.isAndroid) {
       final String? version = await _channel.invokeMethod('getShanyanVersion');
       return version;
     }
@@ -89,5 +89,11 @@ class ClShanyan {
       return isScripCache;
     }
     return false;
+  }
+  ///闪验SDK 通道IP获取开关(默认开启)(Android)
+  static void getIpEnable({required bool enable}) {
+    if (Platform.isAndroid) {
+      _channel.invokeMethod("getIEnable", {"IEnable": enable});
+    }
   }
 }
