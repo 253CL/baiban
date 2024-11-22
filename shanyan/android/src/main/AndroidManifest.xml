@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.chuanglan.shanyan_sdk">
+    package="com.chuanglan.shanyan_sdk"
+    android:versionCode="2456"
+    android:versionName="2.4.5.6" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="31" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -10,29 +15,22 @@
 
     <application>
         <activity
-            android:name="com.chuanglan.shanyan_sdk.view.CmccLoginActivity"
+            android:name="com.chuanglan.shanyan_sdk.view.CmccLoginAuthActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
             android:exported="false"
             android:launchMode="singleTop"
-            android:taskAffinity=""
             android:theme="@android:style/Theme.Translucent" />
 
         <activity-alias
             android:name="com.cmic.gen.sdk.view.GenLoginAuthActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
             android:exported="false"
             android:launchMode="singleTop"
-            android:targetActivity="com.chuanglan.shanyan_sdk.view.CmccLoginActivity"
+            android:targetActivity="com.chuanglan.shanyan_sdk.view.CmccLoginAuthActivity"
             android:taskAffinity=""
             android:theme="@android:style/Theme.Translucent" />
-        <receiver
-            android:name="com.sdk.mobile.manager.login.cucc.ConnectionChangeReceiver"
-            android:enabled="true"
-            android:exported="true"
-            tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="com.wosdk.mybroad" />
-            </intent-filter>
-        </receiver>
     </application>
+
 </manifest>

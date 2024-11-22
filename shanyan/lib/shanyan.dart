@@ -74,7 +74,12 @@ class ClShanyan {
       _channel.invokeMethod("printConsoleEnable", {"enable": enable});
     }
   }
-
+  ///闪验SDK 通道ip获取开关(默认关闭)(Android)
+  static void getIpEnable({required bool enable}) {
+    if (Platform.isAndroid) {
+      _channel.invokeMethod("getIEnable", {"enable": enable});
+    }
+  }
   ///闪验SDK 设置预取号超时(Android+iOS)
   static void setPreGetPhonenumberTimeOut({required int preGetPhoneTimeOut}) {
     if (Platform.isIOS || Platform.isAndroid) {
