@@ -1,4 +1,4 @@
-# 闪验flutter v1.0.0 集成文档
+# 闪验flutter 无UI版 集成文档
 
 在工程 pubspec.yaml 中加入 dependencies
 
@@ -35,25 +35,11 @@ import 'package:shanyan/shanyan.dart';
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.WRITE_SETTINGS"/>
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-<uses-permission android:name="android.permission.GET_TASKS"/>
 ```
-
-建议的权限：如果选用该权限，需要在预取号步骤前提前动态申请。
-
-
-```xml
-<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-```
-
-
-**建议开发者申请本权限，本权限只用于移动运营商在双卡情况下，更精准的获取数据流量卡的运营商类型，**
-**缺少该权限，存在取号失败概率上升的风险。**
-
 配置权限说明
 
 | **权限名称** | 权限说明 | 使用说明 |
@@ -63,11 +49,6 @@ import 'package:shanyan/shanyan.dart';
 | ACCESS_NETWORK_STATE | 允许访问网络状态 | 区分移动网络或WiFi网络 |
 | CHANGE_NETWORK_STATE | 允许改变网络连接状态 | 设备在WiFi跟数据双开时，强行切换使用数据网络 |
 | CHANGE_WIFI_STATE | 允许改变WiFi网络连接状态 | 设备在WiFi跟数据双开时，强行切换使用 |
-| READ_PHONE_STATE | 允许读取手机状态 | （可选）获取IMSI用于判断双卡和换卡 |
-| WRITE_SETTINGS | 允许读写系统设置项 | 电信SDK在6.0系统以下进行数据切换用到的权限，添加后可增加电信在WiFi+4G下网络环境下的取号成功率。6.0系统以上可去除 |
-| GET_TASKS | 允许应用程序访问TASK |  |
-
-
 **b.配置Android 对http协议的支持(任选其一)：**
 
 方式①：
@@ -96,13 +77,25 @@ android:usesCleartextTraffic="true"
 
 
 ```java
--dontwarn com.cmic.sso.sdk.**
--dontwarn com.unikuwei.mianmi.account.shield.**
--dontwarn com.sdk.**
--keep class com.cmic.sso.sdk.**{*;}
--keep class com.sdk.** { *;}
--keep class com.unikuwei.mianmi.account.shield.** {*;}
--keep class cn.com.chinatelecom.account.api.**{*;}
+-dontwarn com.cmic.gen.sdk.**
+        -keep class com.cmic.gen.sdk.**{*;}
+        -dontwarn cn.com.chinatelecom.account.**
+        -keep class cn.com.chinatelecom.account.**{*;}
+        -keep class com.unicom.online.account.shield.** {*;}
+        -keep class com.unicom.online.account.kernel.** {*;}
+        -dontwarn org.bouncycastle.**
+        -keep class org.bouncycastle.** { *;}
+        -keep public class * extends android.app.Activity
+        -keep  class com.chuanglan.shanyan_sdk.OneKeyLoginManager{
+public  *;
+        }
+        -keep  class com.chuanglan.shanyan_sdk.tool.CheckAuthTool{
+public  *;
+        }
+        -keep  class com.chuanglan.shanyan_sdk.listener.**{
+public  *;
+        }
+
 ```
 
 

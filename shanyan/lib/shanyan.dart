@@ -11,7 +11,7 @@ class ClShanyan {
 
   // 获取iOS SDK版本
   static Future<String?> getShanyanVersion() async {
-    if (Platform.isIOS) {
+    if (Platform.isIOS || Platform.isAndroid) {
       final String? version = await _channel.invokeMethod('getShanyanVersion');
       return version;
     }
