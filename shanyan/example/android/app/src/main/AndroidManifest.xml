@@ -1,9 +1,8 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.shanyan.demo">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:icon="@mipmap/ic_launcher"
-        android:label="shanyan_example"
+        android:label="@string/app_name"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
