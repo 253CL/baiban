@@ -74,12 +74,21 @@ class ClShanyan {
       _channel.invokeMethod("printConsoleEnable", {"enable": enable});
     }
   }
+
   ///闪验SDK 通道ip获取开关(默认关闭)(Android)
   static void getIpEnable({required bool enable}) {
     if (Platform.isAndroid) {
-      _channel.invokeMethod("getIEnable", {"enable": enable});
+      _channel.invokeMethod("getIEnable", {"IEnable": enable});
     }
   }
+
+  ///闪验SDK 日志上报开关（默认开启）（Android）
+  static void setFullReport({required bool enable}) {
+    if (Platform.isAndroid) {
+      _channel.invokeMethod("setFullReport", {"report": enable});
+    }
+  }
+
   ///闪验SDK 设置预取号超时(Android+iOS)
   static void setPreGetPhonenumberTimeOut({required int preGetPhoneTimeOut}) {
     if (Platform.isIOS || Platform.isAndroid) {
@@ -87,6 +96,7 @@ class ClShanyan {
           {"preGetPhoneTimeOut": preGetPhoneTimeOut});
     }
   }
+
   ///闪验SDK Android端获取预取号是否有缓存
   static Future<bool?> getScripCache() async {
     if (Platform.isAndroid) {

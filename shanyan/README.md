@@ -1,12 +1,18 @@
-# 闪验flutter 无UI版 集成文档
+# 创蓝闪验SDK集成文档
 
+<br>**更新日志**
+
+| **SDK版本** | 更新日期       | 更新内容                                                                                                                                                                                                    |
+|-----------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v1.1.2    | 2025.3.14  | 1.更新内置电信SDK，优化电信卡概率性Native Crash<br/>2.更新内置联通SDK，细化联通卡内层码410021，拆分新增下面 3 个：<br/>410022：不支持该服务，接口调用错误；<br/>410023：取号进行中，接口重复调用；<br/>410025：操作频繁,流控受限，稍后重试<br/>3.更新json_serializable、dart SDK、gradle工具等版本 |
+| v1.1.1    | 2024.11.22 | 1.更新AndroidSDK到官网2.4.5.6版本；<br/>2.适配androidx.core:core:1.7.0                                                                                                                                            |
+| v1.1.0    | 2024.6.13  | 增加是否获取通道IP的开关                                                                                                                                                                                           |
+| ***       | ***        | ***                                                                                                                                                                                                     |
+
+### 集成方式
 在工程 pubspec.yaml 中加入 dependencies
 
-
-- github 集成
-
-
-
+- github集成
 ```dart
 dependencies:
   shanyan:
@@ -15,15 +21,29 @@ dependencies:
       path: shanyan
       ref: main
 ```
-
-
+    或使用具体tag版本号：
+```dart
+dependencies:
+  shanyan:
+    git:
+      url: git://github.com/253CL/baiban.git
+      path: shanyan
+      ref: v1.1.2
+```
+- 码云集成（已同步到码云，如github拉取超时，可换码云）
+```dart
+dependencies:
+  shanyan:
+    git:
+      url: git://github.com/BeyondWg/shanyan_baiban.git
+      path: shanyan
+      ref: v1.1.2
+```
 ### 使用
-
 
 ```dart
 import 'package:shanyan/shanyan.dart';
 ```
-
 
 ### Android 开发环境搭建
 ​
@@ -49,6 +69,7 @@ import 'package:shanyan/shanyan.dart';
 | ACCESS_NETWORK_STATE | 允许访问网络状态 | 区分移动网络或WiFi网络 |
 | CHANGE_NETWORK_STATE | 允许改变网络连接状态 | 设备在WiFi跟数据双开时，强行切换使用数据网络 |
 | CHANGE_WIFI_STATE | 允许改变WiFi网络连接状态 | 设备在WiFi跟数据双开时，强行切换使用 |
+
 **b.配置Android 对http协议的支持(任选其一)：**
 
 方式①：
@@ -57,9 +78,7 @@ import 'package:shanyan/shanyan.dart';
 ```xml
 android:usesCleartextTraffic="true"
 ```
-
 示例代码：
-
 
 ```xml
 <application
@@ -68,9 +87,7 @@ android:usesCleartextTraffic="true"
     android:usesCleartextTraffic="true"
     ></application>
 ```
-
 方式②：
-
 运营商个别接口为http请求，对于全局禁用Http的项目，需要设置Http白名单。以下为运营商http接口域名：cmpassport.com；10010.com
 
 **c.混淆规则：**
@@ -97,8 +114,6 @@ public  *;
         }
 
 ```
-
-
 
 通过上面的几个步骤，工程就配置完成了，接下来就可以在工程中使用闪验SDK进行开发了。
 
@@ -133,9 +148,6 @@ ClShanyan.init(appId: "******").then((shanYanResult) {
 | --- | --- | --- |
 | appId | String | 闪验平台获取到的appId |
 
-
-
-
 返回为ShanYanResult对象属性如下：
 
 | **字段** | **类型** | **含义** |
@@ -145,12 +157,6 @@ ClShanyan.init(appId: "******").then((shanYanResult) {
 | innerCode | Int | 内层返回码 |
 | innerDesc | String | 内层事件描述 |
 | token | String | token（初始化时返回空） |
-
-
-
-
-
-
 
 ### 2.预取号
 

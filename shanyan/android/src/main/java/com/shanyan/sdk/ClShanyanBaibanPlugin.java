@@ -141,12 +141,13 @@ public class ClShanyanBaibanPlugin implements FlutterPlugin, MethodCallHandler {
                         map.put(shanyan_token, jsonObject.optString("token"));
                         map.put(shanyan_innerCode, code);
                         map.put(shanyan_innerDesc, "获取token成功");
+                        map.put(shanyan_message, "token success");
                     } else {
                         map.put(shanyan_innerCode, jsonObject.optInt("innerCode"));
                         map.put(shanyan_innerDesc, jsonObject.optString("innerDesc"));
+                        map.put(shanyan_message, jsonObject.optString("message"));
                     }
                     map.put(shanyan_code, code);
-                    map.put(shanyan_message, msg);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -161,16 +162,17 @@ public class ClShanyanBaibanPlugin implements FlutterPlugin, MethodCallHandler {
             public void getLoginTokenStatus(int code, String msg) {
                 Map<String, Object> map = new HashMap<>();
                 map.put(shanyan_code, code);
-                map.put(shanyan_message, msg);
                 try {
                     JSONObject jsonObject = new JSONObject(msg);
                     if (1000 == code) {
                         map.put(shanyan_token, jsonObject.optString("token"));
                         map.put(shanyan_innerCode, code);
                         map.put(shanyan_innerDesc, "获取token成功");
+                        map.put(shanyan_message, "token success");
                     } else {
                         map.put(shanyan_innerCode, jsonObject.optInt("innerCode"));
                         map.put(shanyan_innerDesc, jsonObject.optString("innerDesc"));
+                        map.put(shanyan_message, jsonObject.optString("message"));
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -197,7 +199,7 @@ public class ClShanyanBaibanPlugin implements FlutterPlugin, MethodCallHandler {
                     map.put(shanyan_protocolName, jsonObject.optString("protocolName"));
                     map.put(shanyan_protocolUrl, jsonObject.optString("protocolUrl"));
                     map.put(shanyan_code, code);
-                    map.put(shanyan_message, msg);
+                    map.put(shanyan_message, jsonObject.optString("message"));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -220,7 +222,7 @@ public class ClShanyanBaibanPlugin implements FlutterPlugin, MethodCallHandler {
                     map.put(shanyan_innerCode, jsonObject.optInt("innerCode"));
                     map.put(shanyan_innerDesc, jsonObject.optString("innerDesc"));
                     map.put(shanyan_code, code);
-                    map.put(shanyan_message, msg);
+                    map.put(shanyan_message, jsonObject.optString("message"));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

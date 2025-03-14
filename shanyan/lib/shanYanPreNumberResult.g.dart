@@ -7,18 +7,17 @@ part of 'shanYanPreNumberResult.dart';
 // **************************************************************************
 
 ShanYanPreNumberResult _$ShanYanPreNumberResultFromJson(
-    Map<String, dynamic> json) {
-  return ShanYanPreNumberResult(
-    code: json['code'] as int?,
-    message: json['message'] as String?,
-    innerCode: json['innerCode'] as int?,
-    innerDesc: json['innerDesc'] as String?,
-    number: json['number'] as String?,
-    telecom: json['telecom'] as String?,
-    protocolName: json['protocolName'] as String?,
-    protocolUrl: json['protocolUrl'] as String?,
-  );
-}
+        Map<String, dynamic> json) =>
+    ShanYanPreNumberResult(
+      code: (json['code'] as num?)?.toInt(),
+      message: json['message'] as String?,
+      innerCode: (json['innerCode'] as num?)?.toInt(),
+      innerDesc: json['innerDesc'] as String?,
+      number: json['number'] as String?,
+      telecom: json['telecom'] as String?,
+      protocolName: json['protocolName'] as String?,
+      protocolUrl: json['protocolUrl'] as String?,
+    );
 
 Map<String, dynamic> _$ShanYanPreNumberResultToJson(
         ShanYanPreNumberResult instance) =>
