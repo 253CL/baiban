@@ -35,7 +35,7 @@ dependencies:
 dependencies:
   shanyan:
     git:
-      url: git://github.com/ChuangLan_SDK/baiban.git
+      url: git://gitee.com/ChuangLan_SDK/baiban.git
       path: shanyan
       ref: v1.1.2
 ```
