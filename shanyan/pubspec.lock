@@ -71,7 +71,7 @@ packages:
     source: hosted
     version: "4.0.0"
   build_resolvers:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: build_resolvers
       sha256: b9e4fda21d846e192628e7a4f6deda6888c36b5b69ba02ff291a01fd529140f0
