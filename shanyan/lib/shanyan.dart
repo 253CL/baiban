@@ -105,4 +105,12 @@ class ClShanyan {
     }
     return false;
   }
+  ///闪验SDK Android端获取预取号是否有缓存
+  static Future<String?> getOperatorType() async {
+    if (Platform.isAndroid) {
+      final String? operatorType = await _channel.invokeMethod('getOperatorType');
+      return operatorType;
+    }
+    return "UNKNOWN_OPERATOR";
+  }
 }

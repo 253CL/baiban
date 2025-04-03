@@ -59,6 +59,8 @@ class _MyAppState extends State<MyApp> {
                         _msg = shanYanResult.message ?? "";
                         _content = shanYanResult.toJson().toString();
                       });
+                      ClShanyan.getOperatorType()
+                          .then((value) => print("运营商类型:$value"));
                       print(shanYanResult.toJson().toString());
                     });
                   },
