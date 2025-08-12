@@ -4,11 +4,12 @@
 
 | **SDK版本** | 更新日期       | 更新内容                                                                                                                                                                                                    |
 |-----------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| v1.1.4    | 2025.8.12  | 1.更新电信运营商SDK，适配16KB页面解决16KB页面电信卡预取号环节崩溃问题、优化IO异常；<br/>2.优化日志服务，提高控制台成功率统计的准确性；                                                                                                                                                                              |
+| v1.1.3    | 2025.4.3   | 1.修改flutter版本约束，满足更低版本                                                                                                                                                                                  |
 | v1.1.2    | 2025.3.14  | 1.更新内置电信SDK，优化电信卡概率性Native Crash<br/>2.更新内置联通SDK，细化联通卡内层码410021，拆分新增下面 3 个：<br/>410022：不支持该服务，接口调用错误；<br/>410023：取号进行中，接口重复调用；<br/>410025：操作频繁,流控受限，稍后重试<br/>3.更新json_serializable、dart SDK、gradle工具等版本 |
 | v1.1.1    | 2024.11.22 | 1.更新AndroidSDK到官网2.4.5.6版本；<br/>2.适配androidx.core:core:1.7.0                                                                                                                                            |
 | v1.1.0    | 2024.6.13  | 增加是否获取通道IP的开关                                                                                                                                                                                           |
 | ***       | ***        | ***                                                                                                                                                                                                     |
-
 ### 集成方式
 在工程 pubspec.yaml 中加入 dependencies
 
@@ -21,14 +22,14 @@ dependencies:
       path: shanyan
       ref: main
 ```
-    或使用具体tag版本号：
+    或使用具体tag版本号,以v1.1.4版本为例：
 ```dart
 dependencies:
   shanyan:
     git:
       url: git://github.com/253CL/baiban.git
       path: shanyan
-      ref: v1.1.2
+      ref: v1.1.4
 ```
 - 码云集成（已同步到码云，如github拉取超时，可换码云）
 ```dart
@@ -37,7 +38,7 @@ dependencies:
     git:
       url: git://gitee.com/ChuangLan_SDK/baiban.git
       path: shanyan
-      ref: v1.1.2
+      ref: v1.1.4
 ```
 ### 使用
 
@@ -95,23 +96,12 @@ android:usesCleartextTraffic="true"
 
 ```java
 -dontwarn com.cmic.gen.sdk.**
-        -keep class com.cmic.gen.sdk.**{*;}
-        -dontwarn cn.com.chinatelecom.account.**
-        -keep class cn.com.chinatelecom.account.**{*;}
-        -keep class com.unicom.online.account.shield.** {*;}
-        -keep class com.unicom.online.account.kernel.** {*;}
-        -dontwarn org.bouncycastle.**
-        -keep class org.bouncycastle.** { *;}
-        -keep public class * extends android.app.Activity
-        -keep  class com.chuanglan.shanyan_sdk.OneKeyLoginManager{
-public  *;
-        }
-        -keep  class com.chuanglan.shanyan_sdk.tool.CheckAuthTool{
-public  *;
-        }
-        -keep  class com.chuanglan.shanyan_sdk.listener.**{
-public  *;
-        }
+-keep class com.cmic.gen.sdk.**{*;}
+-dontwarn cn.com.chinatelecom.account.**
+-keep class cn.com.chinatelecom.account.**{*;}
+-keep class com.unicom.online.account.shield.** {*;}
+-keep class com.unicom.online.account.kernel.** {*;}
+-keep class com.chuanglan.shanyan_sdk.**{*;}
 
 ```
 

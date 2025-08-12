@@ -4,8 +4,7 @@
 -keep class cn.com.chinatelecom.account.**{*;}
 -keep class com.unicom.online.account.shield.** {*;}
 -keep class com.unicom.online.account.kernel.** {*;}
--dontwarn org.bouncycastle.**
--keep class org.bouncycastle.** { *;}
+-keep class com.chuanglan.shanyan_sdk.**{*;}
 -keep public class * extends android.app.Activity
 -keep  class com.chuanglan.shanyan_sdk.OneKeyLoginManager{
     public  *;
