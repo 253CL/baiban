@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 初始化
 /// @param appId        闪验后台申请的appId
 /// @param complete     预初始化回调block
-+(void)initWithAppId:(NSString *)appId complete:(nullable CLComplete)complete;
++(void)initWithAppId:(NSString *)appId complete:(nullable NS_SWIFT_SENDABLE CLComplete)complete NS_SWIFT_ASYNC(2);
 
 /// 设置初始化超时 单位:s （大于0有效，建议4s左右，默认4s）
 /// @param initTimeOut   初始化超时时间
@@ -59,15 +59,15 @@ NS_ASSUME_NONNULL_BEGIN
      innerCode = 1000,
  }
  */
-+ (void)preGetPhonenumber:(nullable CLComplete)complete;
++ (void)preGetPhonenumber:(nullable NS_SWIFT_SENDABLE CLComplete)complete NS_SWIFT_ASYNC(1);
 
 /// 一键登录获取Token
 /// @param complete 此方法回调队列为dispatch_get_global_queue(0, 0)，如需UI操作请自行切入主线程
-+ (void)loginAuth:(CLComplete)complete;
++ (void)loginAuth:(NS_SWIFT_SENDABLE CLComplete)complete NS_SWIFT_ASYNC(1);
 
 /// 本机认证(本机号码校验)
 /// @param complete 此方法回调队列为dispatch_get_global_queue(0, 0)，如需UI操作请自行切入主线程
-+ (void)mobileCheckWithLocalPhoneNumberComplete:(CLComplete)complete;
++ (void)mobileCheckWithLocalPhoneNumberComplete:(NS_SWIFT_SENDABLE CLComplete)complete NS_SWIFT_ASYNC(1);
 
 /// 模式控制台日志输出控制（默认关闭）
 /// @param enable 开关参数
@@ -78,20 +78,25 @@ NS_ASSUME_NONNULL_BEGIN
 /// 使用xcode14.3+在iOS16.4+上返回UNKNOW时不准确
 + (NSString *)getOperatorType;
 
-
 /// 获取当前流量卡运营商。（在SDK初始化后使用，清理预取号缓存后使用更准确）
 /// - Parameters:
 ///   - timeout: 超时时间(小于1秒会重置为4秒)
 ///   - complete: telecom：CTCC：电信、CMCC：移动、CUCC：联通、UNKNOW：未知
 ///               accurate：返回结果是否准确（为NO表示结果可能不准确）
-+ (void)timeout:(NSTimeInterval)timeout getOperatorType:(void(^)(BOOL accurate, NSString *telecom))complete;
++ (void)timeout:(NSTimeInterval)timeout getOperatorType:(void(NS_SWIFT_SENDABLE ^)(BOOL accurate, NSString *telecom))complete NS_SWIFT_ASYNC(2);
 
 /// 清理预取号缓存
 + (void)clearScripCache;
 
++ (void)allowIpv6:(BOOL)allow;
+
 /// 禁止日志上报获取IP（默认允许）
-/// @param forbidden YES:禁止 NO:允许
+/// @param forbidden YES：禁止 NO：允许
 + (void)forbiddenNonessentialIp:(BOOL)forbidden;
+
+/// 禁止日志上报SIM卡数量（默认禁止）
+/// @param allow YES：允许上报 NO：禁止上报
++ (void)allowSimCounts:(BOOL)allow;
 
 /// 禁止日志上报(默认开启，此接口需要在初始化之前调用,否则配置不生效)
 /// @param forbidden YES:禁止上报 NO:允许上报

@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'shanyan'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'A new Flutter plugin.'
   s.description      = <<-DESC
 A new Flutter plugin.
@@ -15,7 +15,7 @@ A new Flutter plugin.
   s.source           = { :path => '.' }
   s.source_files =  'Classes/*'
   s.public_header_files = 'Classes/*.h'
-  s.vendored_frameworks = 'Classes/**/*.{framework}'
+  s.vendored_frameworks = 'Classes/**/*.{xcframework}'
   s.dependency 'Flutter'
   s.requires_arc = true
   s.platform = :ios, '8.0'
