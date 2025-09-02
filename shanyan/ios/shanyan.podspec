@@ -17,8 +17,8 @@ A new Flutter plugin.
   s.public_header_files = 'Classes/*.h'
   s.vendored_frameworks = 'Classes/**/*.{xcframework}'
   s.dependency 'Flutter'
-  s.requires_arc = true
   s.platform = :ios, '8.0'
+  s.library   = "c++.1"
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES'
