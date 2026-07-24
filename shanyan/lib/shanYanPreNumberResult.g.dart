@@ -9,9 +9,9 @@ part of 'shanYanPreNumberResult.dart';
 ShanYanPreNumberResult _$ShanYanPreNumberResultFromJson(
         Map<String, dynamic> json) =>
     ShanYanPreNumberResult(
-      code: (json['code'] as num?)?.toInt(),
+      code: json['code'] as int?,
       message: json['message'] as String?,
-      innerCode: (json['innerCode'] as num?)?.toInt(),
+      innerCode: json['innerCode'] as int?,
       innerDesc: json['innerDesc'] as String?,
       number: json['number'] as String?,
       telecom: json['telecom'] as String?,

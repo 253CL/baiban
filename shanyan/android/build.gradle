@@ -4,18 +4,18 @@ version '1.0'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.1.0")
+        classpath("com.android.tools.build:gradle:7.3.0")
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -31,6 +31,7 @@ android {
         consumerProguardFiles "consumer-rules.pro"
     }
 }
+
 dependencies {
-    api files('libs/shanyan_sdk_v2.4.5.8_flutter.jar')
+    api files('libs/shanyan_sdk_v2.4.6.1_flutter.jar')
 }
