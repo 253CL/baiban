@@ -1,0 +1,59 @@
+
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "releaseyjdl",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/ydong/Desktop/chuanglan/flash-harmonyos/cer/com.release.yjdl/shanyan.cer",
+          "keyAlias": "shanyan",
+          "keyPassword": "000000192D37976D85891365A333F3E85C4F73182F16A6F4CEFEF6EB0E0447DBB4927EAC76D21A90FB",
+          "profile": "/Users/ydong/Desktop/chuanglan/flash-harmonyos/cer/com.release.yjdl/releaseyjdlDebug.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/ydong/Desktop/chuanglan/flash-harmonyos/cer/com.release.yjdl/shanyan.p12",
+          "storePassword": "00000019D0B1763FD4DBF1013D3A17EA6E07C82B3B9ED916F3B13F535E043D89169497ADAC35DC819D"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "releaseyjdl",
+        "bundleName": "com.release.yjdl",
+        "compatibleSdkVersion": "5.1.0(18)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "useNormalizedOHMUrl": true
+          }
+        },
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "profile"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

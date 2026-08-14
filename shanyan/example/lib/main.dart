@@ -52,6 +52,9 @@ class _MyAppState extends State<MyApp> {
                     if (Platform.isAndroid) {
                       appId = "loXN4jDs";
                     }
+                    if (Platform.isOhos){
+                      appId = "rvLuhZSw";
+                    }
                     ClShanyan.init(appId: appId).then((shanYanResult) {
                       setState(() {
                         _method = "初始化结果：";
