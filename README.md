@@ -21,17 +21,9 @@ dependencies:
     git:
       url: git://github.com/253CL/baiban.git
       path: shanyan
-      ref: main
+      ref: harmony
 ```
-    或使用具体tag版本号,以v1.1.5版本为例：
-```dart
-dependencies:
-  shanyan:
-    git:
-      url: git://github.com/253CL/baiban.git
-      path: shanyan
-      ref: v1.1.5
-```
+
 - 码云集成（已同步到码云，如github拉取超时，可换码云）
 ```dart
 dependencies:
@@ -39,7 +31,7 @@ dependencies:
     git:
       url: git://gitee.com/ChuangLan_SDK/baiban.git
       path: shanyan
-      ref: v1.1.5
+      ref: harmony
 ```
 ### 使用
 
