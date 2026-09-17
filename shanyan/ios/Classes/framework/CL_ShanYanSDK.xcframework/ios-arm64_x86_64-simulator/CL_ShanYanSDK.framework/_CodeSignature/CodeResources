@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/CLShanYanSDKManager.h</key>
 		<data>
-		D2+AH3OlyqXT2yxyIjuohMFYbwc=
+		qduJC+mCXscGiA5mYCy1nDvP/sk=
 		</data>
 		<key>Headers/CL_ShanYanSDK.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		g47b5oXkg0QGyI99TTiXzMuMbsg=
+		oELS6cioNy8siQ9+a13s5aFsxUA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -29,10 +29,6 @@
 	<dict>
 		<key>Headers/CLCompleteResult.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			xizuIZe44DDZhVD8ijffHCD9+aM=
-			</data>
 			<key>hash2</key>
 			<data>
 			jJbe2XjHtNeqVcgIZWLoIF4CN2wKNkW7xWICae0E5FU=
@@ -40,21 +36,13 @@
 		</dict>
 		<key>Headers/CLShanYanSDKManager.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			D2+AH3OlyqXT2yxyIjuohMFYbwc=
-			</data>
 			<key>hash2</key>
 			<data>
-			sBMcOY6C4HcaxFJAEhQ9nALukBTr6CZQmx8s+a+Z56o=
+			AS+laXuvR/Kat/3CQWiawZmMrnvab1V1KBw3voRsVLo=
 			</data>
 		</dict>
 		<key>Headers/CL_ShanYanSDK.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			09l4xp/vDjXZb+ox+yxP3MlIWDw=
-			</data>
 			<key>hash2</key>
 			<data>
 			J3amZ4ajDSqFqKaEc/NE21areHfsckOYua4uw9zQqmA=
@@ -62,10 +50,6 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3CKt+ytC2+8HXH7XZwlfaBw+Xx8=
-			</data>
 			<key>hash2</key>
 			<data>
 			SYKy7n+kncUeuLxiingWPgjd4OoUeA29WzxbOH1wY0Q=

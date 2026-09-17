@@ -18,11 +18,11 @@
 		</data>
 		<key>Headers/EAccountSDK.h</key>
 		<data>
-		PZfzfnSKu6yUFNBSXS+/WPA5C+s=
+		aXazOvxTvvgIQJw17iT+5bv3Nog=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2fvQoY5HG/rl3mtWiL7UTlFGyMo=
+		SMVS2BJwIoBpLaWpasEgEB9WWHE=
 		</data>
 		<key>PrivacyInfo.xcprivacy</key>
 		<data>
@@ -33,10 +33,6 @@
 	<dict>
 		<key>Headers/EAccountCTEConfig.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			gg83gxEd4CRoty+el5hn+tLqgwc=
-			</data>
 			<key>hash2</key>
 			<data>
 			JeFFROYS/ryN7Z7csrs8sHuvOIXFdTPXlQjTf06zvGE=
@@ -44,10 +40,6 @@
 		</dict>
 		<key>Headers/EAccountGCDAsyncSocket.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Tb9vtYFhyOmre+ff/IUtsg9/Nqs=
-			</data>
 			<key>hash2</key>
 			<data>
 			TNiLPb2szfP3d4DqyyiXUdMCKU4slXErn222xhw8UCc=
@@ -55,10 +47,6 @@
 		</dict>
 		<key>Headers/EAccountPreLoginConfigModel.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			+tjrZajIz3zc4xZDKQvHm+V7EQo=
-			</data>
 			<key>hash2</key>
 			<data>
 			jEHlSNfa0L2VbA4RrizvatAyfk+GDIU5VC4sPaceDzM=
@@ -66,21 +54,13 @@
 		</dict>
 		<key>Headers/EAccountSDK.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PZfzfnSKu6yUFNBSXS+/WPA5C+s=
-			</data>
 			<key>hash2</key>
 			<data>
-			SVZXspF9qGi29qT5DbHhjiBk0pwfqUSKQF9l/j3Hq4g=
+			LLpjz8cGXn8bWj1PIBPgcbFXfyuigku9956y5cofsqk=
 			</data>
 		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			vCFxKJl0IEzzY/360VSv3EowMwU=
-			</data>
 			<key>hash2</key>
 			<data>
 			9pviu5nRf2pPOCfka9H9Q1zfpcwKtLgVjMAmUeijpBE=
